@@ -1,9 +1,9 @@
 
-programs: read.o prompt.o
-		cc -o program read.o prompt.o
+programs: rshell.o type_prompt.o
+		g++ -o program rshell.o type_prompt.o
 
-read.o: read_command.cpp rshell.h
-		cc -c rshell.cpp
+rshell.o: rshell.cpp rshell.h
+		g++ -c rshell.cpp
 
-prompt.o: type_prompt.cpp rshell.h
-		cc -c type_prompt.cpp
+type_prompt.o: type_prompt.cpp rshell.h
+		g++ -c type_prompt.cpp
