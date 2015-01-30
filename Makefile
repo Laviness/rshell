@@ -1,9 +1,22 @@
+VPATH = src
+CPPFLAGS = -ansi -pedantic -Wall -Werror
 
-programs: rshell.o type_prompt.o
-		g++ -o program rshell.o type_prompt.o
-		
-rshell.o: rshell.cpp rshell.h
-		g++ -c rshell.cpp
+objects = $(addprefix obj/, rshell.o type_prompt.o)
 
-type_prompt.o: type_prompt.cpp rshell.h
-		g++ -c type_prompt.cpp
+bin/rshell: $(objects)  | bin
+		g++ -o $@ $(objects)
+obj/%.o: %.cpp
+		g++ $(CPPFLAGS) -c -o $@ $<
+obj/type_prompt.o: rshell.h
+obj/rshell.o: rshell.h
+
+$(objects): | obj
+
+obj:
+		mkdir obj
+
+bin:
+	    mkdir bin
+
+clean:
+		rm -rf obj bin
