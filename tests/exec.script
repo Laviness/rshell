@@ -46,12 +46,6 @@ ls: ls: No such file or directory
 ls: ls: No such file or directory
 ls: ls: No such file or directory
 ls: ls: No such file or directory
-[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls ls
-ls: ls: No such file or directory
-[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls ls ls ls
-ls: ls: No such file or directory
-ls: ls: No such file or directory
-ls: ls: No such file or directory
 [rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ a -l ls
 error in execvp: No such file or directory
 [rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ asd sad ls
