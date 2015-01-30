@@ -140,7 +140,7 @@ void parse(int arg_number)
                     {
                         operateflag=false;
                         //cout<<"exit value: "<<WEXITSTATUS(status)<<endl;
-                        cout<<"child process abnormally exited"<<endl;
+                        //cout<<"child process abnormally exited"<<endl;
                     }
                     //scout<<"status: "<<status<<endl;
                 }
