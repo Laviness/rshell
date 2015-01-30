@@ -30,7 +30,7 @@ int read_command()                              //divide the command one by one
 {
     int i=0;
     int j=0;
-    for (i=0;i<command_max_length;i++)
+    for (i=0;command[i]!='\0';i++)
     {
         if (command[i]==';')                    //if there is a ';' add space before and after
                                                 //it to make sure ';' can be divided to one arg
@@ -44,6 +44,13 @@ int read_command()                              //divide the command one by one
             command[i+1]=';';
             command[i+2]=' ';
             i=i+2;
+        }
+        else if (command[i]=='#')
+        {
+            for(j=i;j<strlen(command);j++)
+            {
+                command[j]=' ';
+            }
         }
         
     }
