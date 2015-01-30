@@ -94,32 +94,6 @@ LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc
 [rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ #asd
 [rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ exit
 0
-[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ cd src
-[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git add rshell.cpp 
-[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git commit -m""[K[K ""fini [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[Kpp
-[master da6a5ce] pp
- 1 file changed, 2 insertions(+), 2 deletions(-)
-[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git commit -m ""ppadd rshell.cpp [1Pcommit -m ""pp[K[K[Kasd s d  d"[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kadd rshell.cpp cd src[Kbin/rshell [7Pmakebin/rshell[5Pcd ..ssh yliu127@hammer.css.ucr.edu[A[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git push https://github.com/Laviness/rshell.git hw0 -f[K -f[A[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ ssh yliu127@hammer.cs.ucr.edu[K[A[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ cd ..[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbin/rshell[6Pmakebin/rshell [5Pcd srcgit add rshell.cpp [1Pcommit -m "asd[Kgit commit -m "asdadd rshell.cpp cd src[Kbin/rshell [5Pcd srcgit add rshell.cpp [1Pcommit -m "asd[Kgit commit -m "asd[K[K[Kfinis hed"
-On branch master
-Your branch is ahead of 'origin/master' by 3 commits.
-  (use "git push" to publish your local commits)
 
-Untracked files:
-	[31m../bin/[m
-	[31m../obj/[m
-	[31m../tests/[m
-
-nothing added to commit but untracked files present
-[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ cd ..t[K[K[K[K[K[Kgit add type_prompt.ccpp [K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[Kcommit -m "finishhed"[A[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2P"pp
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd rshell.cpp cd src[K[K[K[K[K[K[Kgit add tests/
-fatal: pathspec 'tests/' did not match any files
-[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git add[K[K[K[K[K[K[Kcd type_prompt.cpp [K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ks[Kests/
-bash: cd: tests/: No such file or directory
-[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ exit
-exit
 
 Script done on Fri Jan 30 14:50:03 2015
