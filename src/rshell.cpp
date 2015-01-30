@@ -50,7 +50,7 @@ int read_command()                              //divide the command one by one
         {
             for(j=i;j<command_max_length;j++)
             {
-                command[j]=' ';
+                command[j]='\0';
             }
         }
         
@@ -176,7 +176,7 @@ int main()
         cin.getline(command, command_max_length, '\n');
         if(strncmp(command,"exit",command_max_length)==0)
         {
-            cout<<strncmp(command,"exit",command_max_length)<<endl;
+            //cout<<strncmp(command,"exit",command_max_length)<<endl;
             break;
         }
         n=0;
