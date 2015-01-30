@@ -3,7 +3,6 @@
 #include <sys/wait.h>
 #include <iostream>
 #include <pwd.h>
-#include <uuid/uuid.h>
 #include <string.h>
 #include <stdio.h>
 using namespace std;
