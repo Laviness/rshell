@@ -22,7 +22,7 @@ void type_prompt(void)
 	{
 		perror("gethostname fail");
 	}
-	int dirlength=strlen(pwd->pw_dir);
+	unsigned int dirlength=strlen(pwd->pw_dir);
 	if (dirlength >= strlen(pathname))
 	{
 		cout<<"[rshell]"<<pwd->pw_name<<"@"<<hostname<<":"<<pwd->pw_dir<<"$ ";
