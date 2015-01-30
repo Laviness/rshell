@@ -109,7 +109,7 @@ void parse(int arg_number)
             l=i;
             parameter[0]=argv[l];
             int k=1;
-             while (argv[i+1]!=NULL && NULL==strstr(argv[i+1],"||") && NULL== strstr(argv[i+1],"&&") && (*argv[i+1]-';')!=0)
+             while (argv[i+1]!=NULL && NULL==strstr(argv[i+1],"||") && NULL== strstr(argv[i+1],"&&") && (*argv[i+1]-';')!=0 && i+1<arg_number)
             {
                 parameter[k]=argv[i+1];
                 //cout<<parameter[k]<<endl;
