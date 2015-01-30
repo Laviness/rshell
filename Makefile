@@ -1,7 +1,7 @@
 
 programs: rshell.o type_prompt.o
 		g++ -o program rshell.o type_prompt.o
-
+		
 rshell.o: rshell.cpp rshell.h
 		g++ -c rshell.cpp
 
