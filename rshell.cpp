@@ -18,7 +18,7 @@ char *word, *brkt;                              //used for store the output from
 char *argv[arg_max];                            //store command one by one
 char *parameter[para_max];                      //parameter that will be transmit to execvp
 int arg_number;                                 //count the number of args to be proceed
-int n=0;
+int n;
 int status;                                     //return status from child process
 bool jumpflag=false;                            //if the flag is set to be true, then skip the
                                                 //next arg, for the logic operation
@@ -51,8 +51,9 @@ int read_command()                              //divide the command one by one
     for (word = strtok_r(command, sep, &brkt);word;word = strtok_r(NULL, sep, &brkt))
 	{
         argv[n]=word;
-        arg_number=arg_number+1;                //count the number of args
+        n=n+1;                //count the number of args
 	}
+    arg_number=n;
     return arg_number;
 }
 
