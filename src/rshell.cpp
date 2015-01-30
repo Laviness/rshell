@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <errno.h>
 #include "rshell.h"
 using namespace std;
 
@@ -47,7 +48,7 @@ int read_command()                              //divide the command one by one
         }
         else if (command[i]=='#')
         {
-            for(j=i;j<strlen(command);j++)
+            for(j=i;j<command_max_length;j++)
             {
                 command[j]=' ';
             }
@@ -72,7 +73,7 @@ void parse(int arg_number)
     for (i=0;i<arg_number;i++)
     {
         //cout<<"line75 "<< argv[i]<<endl;
-        if (NULL!=strstr(argv[i],"&&"))         //when the arg is "&&", if all of former \
+        if (NULL!=strstr(argv[i],"&&"))         //when the arg is "&&", if all of former 
                                                 //operations turns out true, not skip next
                                                 //arg
         {
@@ -87,7 +88,7 @@ void parse(int arg_number)
             }
         }
  
-        else if (NULL!=strstr(argv[i],"||"))    //when the arg is "||", if all of former \
+        else if (NULL!=strstr(argv[i],"||"))    //when the arg is "||", if all of former 
                                                 //operation turns  out true, skip next arg
         {
             if (operateflag==true)
