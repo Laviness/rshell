@@ -7,7 +7,7 @@ void type_prompt(void)
 {
 	char pathname[path_length];
 	char hostname[host_length];
-	struct passwd *pwd;
+	struct passwd *pwd=NULL;
 	if (NULL==getpwuid(getuid()))
     {
         perror("error in getpwuid");
