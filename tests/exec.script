@@ -1,0 +1,125 @@
+Script started on Fri Jan 30 14:43:57 2015
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/tests[00m$ cd ..
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/rshell
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls
+LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ -a
+error in execvp: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls -a
+[36m.[m[m         .DS_Store LICENSE   README.md [36mobj[m[m       test
+[36m..[m[m        [36m.git[m[m      Makefile  [36mbin[m[m       [36msrc[m[m       [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls -    s -a -l
+error in execvp: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls    -l -a
+total 80
+drwxr-xr-x  12 Elvis  staff    408 Jan 30 14:42 [36m.[m[m
+drwxr-xr-x  11 Elvis  staff    374 Jan 30 14:25 [36m..[m[m
+-rw-r--r--@  1 Elvis  staff   6148 Jan 30 14:44 .DS_Store
+drwxr-xr-x  14 Elvis  staff    476 Jan 30 14:31 [36m.git[m[m
+-rw-r--r--   1 Elvis  staff  18027 Jan 30 14:25 LICENSE
+-rw-r--r--   1 Elvis  staff    339 Jan 30 14:25 Makefile
+-rw-r--r--   1 Elvis  staff    236 Jan 30 14:25 README.md
+drwxr-xr-x   4 Elvis  staff    136 Jan 30 14:43 [36mbin[m[m
+drwxr-xr-x   4 Elvis  staff    136 Jan 30 14:43 [36mobj[m[m
+drwxr-xr-x   5 Elvis  staff    170 Jan 30 14:30 [36msrc[m[m
+-rw-r--r--   1 Elvis  staff    758 Jan 30 14:24 test
+drwxr-xr-x   3 Elvis  staff    102 Jan 30 14:43 [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls  -l
+total 64
+-rw-r--r--  1 Elvis  staff  18027 Jan 30 14:25 LICENSE
+-rw-r--r--  1 Elvis  staff    339 Jan 30 14:25 Makefile
+-rw-r--r--  1 Elvis  staff    236 Jan 30 14:25 README.md
+drwxr-xr-x  4 Elvis  staff    136 Jan 30 14:43 [36mbin[m[m
+drwxr-xr-x  4 Elvis  staff    136 Jan 30 14:43 [36mobj[m[m
+drwxr-xr-x  5 Elvis  staff    170 Jan 30 14:30 [36msrc[m[m
+-rw-r--r--  1 Elvis  staff    758 Jan 30 14:24 test
+drwxr-xr-x  3 Elvis  staff    102 Jan 30 14:43 [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls  -r
+[36mtests[m[m     test      [36msrc[m[m       [36mobj[m[m       [36mbin[m[m       README.md Makefile  LICENSE
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls  -
+ls: -: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ asdfasdfdsfasdfasdfasfasdfasdassfadsfsdafasdfsadfads
+error in execvp: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls  ls ls ls ls ls
+ls: ls: No such file or directory
+ls: ls: No such file or directory
+ls: ls: No such file or directory
+ls: ls: No such file or directory
+ls: ls: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls ls
+ls: ls: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls ls ls ls
+ls: ls: No such file or directory
+ls: ls: No such file or directory
+ls: ls: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ a -l ls
+error in execvp: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ asd sad ls
+error in execvp: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls #asd
+ls: fts_open: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls
+LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$   ls  #asd
+ls: fts_open: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls 
+LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls 
+LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ pwd
+/Users/Elvis/Documents/UCR /CS 100/rshell
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ pwd  #dasd
+usage: pwd [-L | -P]
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ^[[A    #asd
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ #qwer
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls #l
+ls: fts_open: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls
+LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ 
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls #asd
+ls: fts_open: No such file or directory
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ exit
+0
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ make
+g++ -ansi -pedantic -Wall -Werror -c -o obj/rshell.o src/rshell.cpp
+g++ -o bin/rshell obj/rshell.o obj/type_prompt.o
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/rshell 
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ la s #asd
+LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls #aqwe
+LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ pwd #ldsa
+/Users/Elvis/Documents/UCR /CS 100/rshell
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ #asd
+[rshell]Elvis@ucrwpa2-2-172-230.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ exit
+0
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ cd src
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git add rshell.cpp 
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git commit -m""[K[K ""fini [A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[Kpp
+[master da6a5ce] pp
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git commit -m ""ppadd rshell.cpp [1Pcommit -m ""pp[K[K[Kasd s d  d"[K[K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kadd rshell.cpp cd src[Kbin/rshell [7Pmakebin/rshell[5Pcd ..ssh yliu127@hammer.css.ucr.edu[A[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git push https://github.com/Laviness/rshell.git hw0 -f[K -f[A[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ ssh yliu127@hammer.cs.ucr.edu[K[A[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ cd ..[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbin/rshell[6Pmakebin/rshell [5Pcd srcgit add rshell.cpp [1Pcommit -m "asd[Kgit commit -m "asdadd rshell.cpp cd src[Kbin/rshell [5Pcd srcgit add rshell.cpp [1Pcommit -m "asd[Kgit commit -m "asd[K[K[Kfinis hed"
+On branch master
+Your branch is ahead of 'origin/master' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+	[31m../bin/[m
+	[31m../obj/[m
+	[31m../tests/[m
+
+nothing added to commit but untracked files present
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ cd ..t[K[K[K[K[K[Kgit add type_prompt.ccpp [K[K[K[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[K[K[K[K[K[Kcommit -m "finishhed"[A[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[2P"pp
+[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cadd rshell.cpp cd src[K[K[K[K[K[K[Kgit add tests/
+fatal: pathspec 'tests/' did not match any files
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ git add[K[K[K[K[K[K[Kcd type_prompt.cpp [K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ks[Kests/
+bash: cd: tests/: No such file or directory
+[01;32mElvis@ucrwpa2-2-172-230[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ exit
+exit
+
+Script done on Fri Jan 30 14:50:03 2015
