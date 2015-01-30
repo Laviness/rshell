@@ -6,5 +6,7 @@
  Exit with ```exit``` command.
 
 #Usage
- ```make``` 
- ```./program```
+ ```
+    make 
+    ./program
+ ```
