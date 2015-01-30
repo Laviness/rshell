@@ -6,6 +6,7 @@
 #include <uuid/uuid.h>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "rshell.h"
 using namespace std;
 
@@ -13,7 +14,7 @@ const int arg_max=100;
 const int para_max=100;
 const int command_max_length=1000;
 char command[command_max_length];               //used for storing the command input from user
-char *sep = (char*)"\\; " ;                     // @/ =.~`!#$%^*()_+?><[]{}:
+char *sep = (char*)"\\ " ;                     // @/ =.~`!#$%^*()_+?><[]{}:
 char *word, *brkt;                              //used for store the output from strtok_r
 char *argv[arg_max];                            //store command one by one
 char *parameter[para_max];                      //parameter that will be transmit to execvp
@@ -71,14 +72,15 @@ void parse(int arg_number)
     int l=0;
     for (i=0;i<arg_number;i++)
     {
+        //cout<<"line75 "<< argv[i]<<endl;
         if (NULL!=strstr(argv[i],"&&"))         //when the arg is "&&", if all of former \
                                                 //operations turns out true, not skip next
                                                 //arg
         {
-            i=i+1;
             if (operateflag==false)
             {
                 jumpflag=true;
+                //cout<<"line 84 jump"<<endl;
             }
             else if (operateflag==true)
             {
@@ -89,7 +91,6 @@ void parse(int arg_number)
         else if (NULL!=strstr(argv[i],"||"))    //when the arg is "||", if all of former \
                                                 //operation turns  out true, skip next arg
         {
-            i=i+1;
             if (operateflag==true)
             {
                 jumpflag=true;
@@ -101,9 +102,7 @@ void parse(int arg_number)
         }
         else if ((*argv[i]-';')==0)             //when the arg is ';', execute next arg
         {
-            jumpflag=false;
-            i=i+1;
-        }
+            jumpflag=false;        }
         else
         {
             l=i;
@@ -114,10 +113,6 @@ void parse(int arg_number)
                 parameter[k]=argv[i+1];
                 //cout<<parameter[k]<<endl;
                 k=k+1;
-                i=i+1;
-            }
-            if (argv[i+1]!=NULL)
-            {
                 i=i+1;
             }
             if (jumpflag==true)
@@ -135,16 +130,19 @@ void parse(int arg_number)
                 {
                     //cout << "I am parent" <<pid<<endl;
                     operateflag=true;
-                    if(waitpid(pid,NULL,0)==-1 && (errno != EINTR))
+                    if(waitpid(pid,&status,0)==-1 && (errno != EINTR))
                                                         //parent will wait until child exit
                     {
                         perror("error in waitpid");
                     }
-                    if(WIFSIGNALED(status))             //read status from the child process
+                    if(WEXITSTATUS(status))             //read status from the child
+                                                            //process
                     {
                         operateflag=false;
+                        //cout<<"exit value: "<<WEXITSTATUS(status)<<endl;
                         cout<<"child process abnormally exited"<<endl;
                     }
+                    //scout<<"status: "<<status<<endl;
                 }
                 else if(pid == 0)
                 {
@@ -154,7 +152,7 @@ void parse(int arg_number)
                     {
                         perror("error in execvp");
                         operateflag=false;
-                        exit(0);                        //if error happens, stop it from being
+                        exit(7);                        //if error happens, stop it from being
                                                         //zombie
                     }
                     
