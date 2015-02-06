@@ -108,7 +108,7 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
 	//char pathname[path_length];
     //cout<<"I am in folder"<<pathname<<endl;
 	struct dirent *pdir;
-	int i=0,j=0,k=0;
+	int i=0,j=0;
 	int dflag=0;
     char *chpathname;
     char temp[1000];
@@ -189,24 +189,33 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
 	return;
 }
 
-int main(int argc, const char *argv[]){
+int main(int argc, char *argv[]){
     int Rflag=0;
     int aflag=0;
     int lflag=0;
     char *sep = (char*)"-alR" ;                     // @/ =.~`!#$%^*()_+?><[]{}:
     char *word, *brkt;
     //DIR *dir;
-    int path_length=1000;
-    char pathname[path_length];
+    //int path_length=1000;
     
-//    int argc=2;
-//    char *argv[2]={"ls","-ald"};
+    char pathname[1000];
+    if (NULL==getcwd(pathname,1000))
+    {
+        perror("error in getcwd");
+    }
+    /*if(NULL==(dir=opendir(pathname)))
+     {
+     perror("error in opendir");
+     }*/
+    
+    //int argc=2;
+    //char *argv[2]={(char*)"ls",(char*)"-alR"};
     
     if (argc < 1){
         perror("not enough input arguments");
         return -1;
     }
-    else if (argv >1){
+    else if (argc >1){
         for (int i=1;i<argc;i++){
             if (argv[i][0]=='-' && strlen(argv[i])<5){
                 if (strstr(argv[i],"a")!=NULL)
@@ -220,20 +229,19 @@ int main(int argc, const char *argv[]){
                     cout<<"usage: ls [-alR] [file ...]"<<endl;
                 }
             }
+            else if (argv[i][0]!='-'){
+                print_file(lflag,pathname,argv[i]);
+                if (argv[i+1]==NULL)
+                    return 0;
+            }
             else{
                 cout<<"ls: illegal option -- 2"<<endl;
                 cout<<"usage: ls [-alR] [file ...]"<<endl;
                 return -1;
             }
+        }
     }
-	if (NULL==getcwd(pathname,path_length))
-	{
-		perror("error in getcwd");
-	}
-	/*if(NULL==(dir=opendir(pathname)))
-	{
-		perror("error in opendir");
-	}*/
+	
 	print_al_info(lflag,aflag,Rflag,pathname);
 	
 	
