@@ -14,115 +14,133 @@
 using namespace std;
 
 int print_file(int lflag,char *pathname,char *filename){
-	struct stat s;
-	struct passwd *pwd;
-	struct group *grp;
-	struct tm *clk;
-	time_t time;
-	int dflag=0;
-	if(stat(pathname,&s)==-1)
-	{
-		perror("error in stat");
-	}
-	if (NULL==getpwuid(s.st_uid))
-	{
-		perror("error in getpwuid");
-	}
-	else
-		pwd = getpwuid(s.st_uid);
-	if (NULL==getgrgid(s.st_gid))
-	{
-		perror("error in getgrgid");
-	}
-	else
-		grp = getgrgid(s.st_gid);
-//	cout << oct;
-//	cout<<s.st_mode<<endl;
-
-    cout.fill(' ');
-	switch(s.st_mode & S_IFMT)
-	{
-        case S_IFSOCK:if (lflag==1)
-            cout<<"s";break;
-		case S_IFLNK :if (lflag==1)
-            cout<<"l";break;
-		case S_IFDIR :if (lflag==1)
-            cout<<"d";dflag=1;break;
-		case S_IFCHR :if (lflag==1)
-            cout<<"c";break;
-		case S_IFBLK :if (lflag==1)
-            cout<<"b";break;
-		case S_IFREG :if (lflag==1)
-            cout<<"-";break;
-		case S_IFIFO :if (lflag==1)
-            cout<<"p";break;
-		default      :break;
-	}
-    if (lflag==1){
-        
-        cout<<((s.st_mode&S_IRUSR)?"r":"-");
-        cout<<((s.st_mode&S_IWUSR)?"w":"-");
-        cout<<((s.st_mode&S_IXUSR)?"x":"-");
-        
-        cout<<((s.st_mode&S_IRGRP)?"r":"-");
-        cout<<((s.st_mode&S_IWGRP)?"w":"-");
-        cout<<((s.st_mode&S_IXGRP)?"x":"-");
-
-        cout<<((s.st_mode&S_IROTH)?"r":"-");
-        cout<<((s.st_mode&S_IWOTH)?"w":"-");
-        cout<<((s.st_mode&S_IXOTH)?"x":"-");
-	
-        cout<<setw(3)<<right<<s.st_nlink<<" ";
-        cout<<setw(7)<<left<<pwd->pw_name;
-        cout<<setw(5)<<left<<grp->gr_name;
-        cout<<setw(6)<<right<<s.st_size<<" ";
-
-        time=s.st_mtime;
-        clk=localtime(&time);
-        switch (clk->tm_mon+1)
-        {
-            case 1 :cout<<"Jan";break;
-            case 2 :cout<<"Feb";break;
-            case 3 :cout<<"Mar";break;
-            case 4 :cout<<"Apr";break;
-            case 5 :cout<<"May";break;
-            case 6 :cout<<"Jun";break;
-            case 7 :cout<<"Jul";break;
-            case 8 :cout<<"Aug";break;
-            case 9 :cout<<"Sep";break;
-            case 10:cout<<"Oct";break;
-            case 11:cout<<"Nov";break;
-            case 12:cout<<"Dec";break;
-        }
-        cout<<setw(3)<<right<<clk->tm_mday<<" ";
-        cout.fill('0');
-        cout<<setw(2)<<clk->tm_hour<<":"<<setw(2)<<clk->tm_min<<" ";
-        cout<<left<<filename<<endl;
+    struct stat s;
+    struct passwd *pwd;
+    struct group *grp;
+    struct tm *clk;
+    time_t time;
+    int dflag=0;
+    //char *blue=(char*)"\x1b[31m";
+    //char *green=(char*)"\x1b[0;32m";
+    //char *grey=(char*)"\x1b[30;1m";
+    if(stat(pathname,&s)==-1)
+    {
+        perror("error in stat");
     }
-	return dflag;
+    else{
+        if (NULL==getpwuid(s.st_uid))
+        {
+            perror("error in getpwuid");
+        }
+        else
+            pwd = getpwuid(s.st_uid);
+        if (NULL==getgrgid(s.st_gid))
+        {
+            perror("error in getgrgid");
+        }
+        else
+            grp = getgrgid(s.st_gid);
+        //	cout << oct;
+        //	cout<<s.st_mode<<endl;
+        
+        cout.fill(' ');
+        switch(s.st_mode & S_IFMT)
+        {
+            case S_IFSOCK:if (lflag==1)
+                cout<<"s";break;
+            case S_IFLNK :if (lflag==1)
+                cout<<"l";break;
+            case S_IFDIR :if (lflag==1)
+                cout<<"d";dflag=1;break;
+            case S_IFCHR :if (lflag==1)
+                cout<<"c";break;
+            case S_IFBLK :if (lflag==1)
+                cout<<"b";break;
+            case S_IFREG :if (lflag==1)
+                cout<<"-";break;
+            case S_IFIFO :if (lflag==1)
+                cout<<"p";break;
+            default      :break;
+        }
+        if (lflag==1){
+            
+            cout<<((s.st_mode&S_IRUSR)?"r":"-");
+            cout<<((s.st_mode&S_IWUSR)?"w":"-");
+            cout<<((s.st_mode&S_IXUSR)?"x":"-");
+            
+            cout<<((s.st_mode&S_IRGRP)?"r":"-");
+            cout<<((s.st_mode&S_IWGRP)?"w":"-");
+            cout<<((s.st_mode&S_IXGRP)?"x":"-");
+            
+            cout<<((s.st_mode&S_IROTH)?"r":"-");
+            cout<<((s.st_mode&S_IWOTH)?"w":"-");
+            cout<<((s.st_mode&S_IXOTH)?"x":"-");
+            
+            cout<<setw(3)<<right<<s.st_nlink<<" ";
+            cout<<setw(7)<<left<<pwd->pw_name;
+            cout<<setw(5)<<left<<grp->gr_name;
+            cout<<setw(6)<<right<<s.st_size<<" ";
+            
+            time=s.st_mtime;
+            clk=localtime(&time);
+            switch (clk->tm_mon+1)
+            {
+                case 1 :cout<<"Jan";break;
+                case 2 :cout<<"Feb";break;
+                case 3 :cout<<"Mar";break;
+                case 4 :cout<<"Apr";break;
+                case 5 :cout<<"May";break;
+                case 6 :cout<<"Jun";break;
+                case 7 :cout<<"Jul";break;
+                case 8 :cout<<"Aug";break;
+                case 9 :cout<<"Sep";break;
+                case 10:cout<<"Oct";break;
+                case 11:cout<<"Nov";break;
+                case 12:cout<<"Dec";break;
+            }
+            cout<<setw(3)<<right<<clk->tm_mday<<" ";
+            cout.fill('0');
+            cout<<setw(2)<<clk->tm_hour<<":"<<setw(2)<<clk->tm_min<<" ";
+        }
+        if (filename[0]=='.'){
+                cout<<"\x1b[37m"<<left<<filename<<endl;
+                cout<<"\x1b[0m";
+            }
+        else if ((s.st_mode & S_IFMT) == S_IFREG && (s.st_mode&S_IXOTH) == 1){
+            cout<<"\x1b[0;32m"<<left<<filename<<endl;
+            cout<<"\x1b[0m";
+        }
+        else if((s.st_mode & S_IFMT) == S_IFDIR){
+            cout<<"\x1b[1;29m"<<left<<filename<<endl;
+            cout<<"\x1b[0m";
+        }
+       else
+            cout<<left<<filename<<endl;
+    }
+    return dflag;
 }
 
 void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
-	DIR *dir;
-	//int path_length=1000;
-	//char pathname[path_length];
+    DIR *dir;
+    //int path_length=1000;
+    //char pathname[path_length];
     //cout<<"I am in folder"<<pathname<<endl;
-	struct dirent *pdir;
-	int i=0,j=0;
-	int dflag=0;
+    struct dirent *pdir;
+    int i=0,j=0;
+    int dflag=0;
     char *chpathname;
     char temp[1000];
     char connector[2]="/";
     char list_of_cpath[10][1000];
     char list_of_cname[10][1000];
     int dirno[10];
-        //cout<<pathname<<endl;
-	if(NULL==(dir=opendir(pathname)))
-	{
-		perror("error in opendir");
-	}
-	while ((pdir=readdir(dir))!=NULL)
-	{
+    //cout<<pathname<<endl;
+    if(NULL==(dir=opendir(pathname)))
+    {
+        perror("error in opendir");
+    }
+    while ((pdir=readdir(dir))!=NULL)
+    {
         strcpy(temp,pathname);
         chpathname=strcat(temp,connector);
         strcpy(list_of_cname[i],pdir->d_name);
@@ -132,44 +150,44 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
         {
             temp[j]='\0';
         }
-		if (aflag==0)
-		{
+        if (aflag==0)
+        {
             if(pdir->d_name[0]=='.'){
                 i++;
                 continue;
             }
-		}
-		if (lflag==1)
-		{
-			dflag=print_file(lflag,list_of_cpath[i],list_of_cname[i]);
-		}
-		else 
-		{
+        }
+        if (lflag==1)
+        {
+            dflag=print_file(lflag,list_of_cpath[i],list_of_cname[i]);
+        }
+        else
+        {
             dflag=print_file(lflag,list_of_cpath[i],list_of_cname[i]);
             cout.fill(' ');
-			cout<<setw(22)<<left<<pdir->d_name;
-			if (i%3==0)
-				cout<<endl;
-		}
-		if (Rflag==1 && dflag==1)
+            cout<<setw(22)<<left<<pdir->d_name;
+            if (i%3==0)
+                cout<<endl;
+        }
+        if (Rflag==1 && dflag==1)
         {
             if(pdir->d_name[0]=='.'){
                 i++;
                 continue;
             }
             /*strcpy(temp,pathname);
-            chpathname=strcat(temp,connector);
-            strcpy(list_of_cname[j],pdir->d_name);
-            //cout<<list_of_cname[j]<<endl;
-            strcpy(list_of_cpath[j],strcat(chpathname,pdir->d_name));
+             chpathname=strcat(temp,connector);
+             strcpy(list_of_cname[j],pdir->d_name);
+             //cout<<list_of_cname[j]<<endl;
+             strcpy(list_of_cpath[j],strcat(chpathname,pdir->d_name));
              */
             //cout<<list_of_cpath[j]<<endl;
             dirno[i]=1;
-		}	
+        }
         i++;
-	}
-	if (lflag==0)
-		cout<<endl;
+    }
+    if (lflag==0)
+        cout<<endl;
     if (closedir(dir)==-1)
     {
         perror("error in closedir");
@@ -185,14 +203,14 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
             }
         }
     }
-
-	return;
+    
+    return;
 }
 
 int main(int argc, char *argv[]){
     int Rflag=0;
     int aflag=0;
-    int lflag=0;
+    int lflag=1;
     char *sep = (char*)"-alR" ;                     // @/ =.~`!#$%^*()_+?><[]{}:
     char *word, *brkt;
     //DIR *dir;
@@ -241,10 +259,10 @@ int main(int argc, char *argv[]){
             }
         }
     }
-	
-	print_al_info(lflag,aflag,Rflag,pathname);
-	
-	
-	return 0;
-
+    
+    print_al_info(lflag,aflag,Rflag,pathname);
+    
+    
+    return 0;
+    
 }
