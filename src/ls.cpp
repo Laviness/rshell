@@ -202,29 +202,29 @@ int main(int argc, const char *argv[]){
 //    int argc=2;
 //    char *argv[2]={"ls","-ald"};
     
-    if (argc < 2){
+    if (argc < 1){
         perror("not enough input arguments");
         return -1;
     }
-    for (int i=1;i<argc;i++){
-        if (argv[i][0]=='-' && strlen(argv[i])<5){
-            if (strstr(argv[i],"a")!=NULL)
-                
-                aflag=1;
-            if (strstr(argv[i],"l")!=NULL)
-                lflag=1;
-            if (strstr(argv[i],"R")!=NULL)
-                Rflag=1;
-            if (NULL!=(word = strtok_r(argv[i], sep, &brkt))){
+    else if (argv >1){
+        for (int i=1;i<argc;i++){
+            if (argv[i][0]=='-' && strlen(argv[i])<5){
+                if (strstr(argv[i],"a")!=NULL)
+                    aflag=1;
+                if (strstr(argv[i],"l")!=NULL)
+                    lflag=1;
+                if (strstr(argv[i],"R")!=NULL)
+                    Rflag=1;
+                if (NULL!=(word = strtok_r(argv[i], sep, &brkt))){
+                    cout<<"ls: illegal option -- 2"<<endl;
+                    cout<<"usage: ls [-alR] [file ...]"<<endl;
+                }
+            }
+            else{
                 cout<<"ls: illegal option -- 2"<<endl;
                 cout<<"usage: ls [-alR] [file ...]"<<endl;
+                return -1;
             }
-        }
-        else{
-            cout<<"ls: illegal option -- 2"<<endl;
-            cout<<"usage: ls [-alR] [file ...]"<<endl;
-            return -1;
-        }
     }
 	if (NULL==getcwd(pathname,path_length))
 	{
