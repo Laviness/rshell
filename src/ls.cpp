@@ -102,21 +102,24 @@ int print_file(int lflag,char *pathname,char *filename){
             cout.fill('0');
             cout<<setw(2)<<clk->tm_hour<<":"<<setw(2)<<clk->tm_min<<" ";
         }
+        cout.fill(' ');
         if (filename[0]=='.'){
-                cout<<"\x1b[37m"<<left<<filename<<endl;
+                cout<<"\x1b[37m"<<setw(12)<<left<<filename;
                 cout<<"\x1b[0m";
             }
         else if ((s.st_mode & S_IFMT) == S_IFREG && (s.st_mode&S_IXOTH) == 1){
-            cout<<"\x1b[0;32m"<<left<<filename<<endl;
+            cout<<"\x1b[0;32m"<<setw(12)<<left<<filename;
             cout<<"\x1b[0m";
         }
         else if((s.st_mode & S_IFMT) == S_IFDIR){
-            cout<<"\x1b[1;29m"<<left<<filename<<endl;
+            cout<<"\x1b[1;29m"<<setw(12)<<left<<filename;
             cout<<"\x1b[0m";
         }
        else
-            cout<<left<<filename<<endl;
+            cout<<setw(12)<<left<<filename;
     }
+    if (lflag == 1)
+        cout<<endl;
     return dflag;
 }
 
@@ -157,18 +160,18 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
                 continue;
             }
         }
-        if (lflag==1)
-        {
+        //if (lflag==1)
+        //{
             dflag=print_file(lflag,list_of_cpath[i],list_of_cname[i]);
-        }
-        else
+        //}
+        /*else
         {
             dflag=print_file(lflag,list_of_cpath[i],list_of_cname[i]);
             cout.fill(' ');
             cout<<setw(22)<<left<<pdir->d_name;
             if (i%3==0)
                 cout<<endl;
-        }
+        }*/
         if (Rflag==1 && dflag==1)
         {
             if(pdir->d_name[0]=='.'){
@@ -198,7 +201,7 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
         {
             if(dirno[i]==1){
                 dirno[i]=0;
-                cout<<endl<<"./"<<list_of_cname[i]<<endl;
+                cout<<endl<<"./"<<list_of_cname[i]<<":"<<endl;
                 print_al_info(lflag,aflag,Rflag,list_of_cpath[i]);
             }
         }
@@ -210,7 +213,7 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
 int main(int argc, char *argv[]){
     int Rflag=0;
     int aflag=0;
-    int lflag=1;
+    int lflag=0;
     char *sep = (char*)"-alR" ;                     // @/ =.~`!#$%^*()_+?><[]{}:
     char *word, *brkt;
     //DIR *dir;
