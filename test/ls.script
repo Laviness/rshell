@@ -1,0 +1,120 @@
+Script started on Sat Feb  7 18:41:39 2015
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell/test[00m$ cd [K[K[Kcd ..
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ cd ..[1Pexitbin/ls -l[1Pl[K[K -l[K[K[K
+[1;29mbin         [0mLICENSE     Makefile    [1;29mobj         [0mREADME.md   [1;29msrc         [0m[1;29mtest        [0m
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/ls -a
+[37m.           [0m[37m..          [0m[37m.DS_Store   [0m[37m.git        [0m[1;29mbin         [0mLICENSE     Makefile    [1;29mobj         [0mREADME.md   [1;29msrc         [0m[1;29mtest        [0m
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/ls -a[Kl
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [1;29mbin         [0m
+-rw-r--r--  1 Elvis  staff 18027 Jan 30 16:00 LICENSE     
+-rw-r--r--  1 Elvis  staff   410 Feb  5 16:53 Makefile    
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [1;29mobj         [0m
+-rw-r--r--  1 Elvis  staff   236 Jan 30 16:00 README.md   
+drwxr-xr-x  7 Elvis  staff   238 Feb  7 18:39 [1;29msrc         [0m
+drwxr-xr-x  4 Elvis  staff   136 Feb  7 18:32 [1;29mtest        [0m
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/ls -l[KR
+[1;29mbin         [0mLICENSE     Makefile    [1;29mobj         [0mREADME.md   [1;29msrc         [0m[1;29mtest        [0m
+
+./bin:
+[0;32mls          [0m[0;32mrshell      [0m
+
+./obj:
+ls.o        rshell.o    type_prompt.o
+
+./src:
+ls.cpp      rshell.cpp  rshell.h    type_prompt.cpp
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/ls -R[Kal
+drwxr-xr-x 11 Elvis  staff   374 Feb  7 18:39 [37m.           [0m
+drwxr-xr-x  9 Elvis  staff   306 Feb  5 16:42 [37m..          [0m
+-rw-r--r--  1 Elvis  staff  8196 Feb  7 18:39 [37m.DS_Store   [0m
+drwxr-xr-x 14 Elvis  staff   476 Feb  7 18:40 [37m.git        [0m
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [1;29mbin         [0m
+-rw-r--r--  1 Elvis  staff 18027 Jan 30 16:00 LICENSE     
+-rw-r--r--  1 Elvis  staff   410 Feb  5 16:53 Makefile    
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [1;29mobj         [0m
+-rw-r--r--  1 Elvis  staff   236 Jan 30 16:00 README.md   
+drwxr-xr-x  7 Elvis  staff   238 Feb  7 18:39 [1;29msrc         [0m
+drwxr-xr-x  4 Elvis  staff   136 Feb  7 18:32 [1;29mtest        [0m
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/ls -al[K -R
+[37m.           [0m[37m..          [0m[37m.DS_Store   [0m[37m.git        [0m[1;29mbin         [0mLICENSE     Makefile    [1;29mobj         [0mREADME.md   [1;29msrc         [0m[1;29mtest        [0m
+
+./bin:
+[37m.           [0m[37m..          [0m[37m.DS_Store   [0m[0;32mls          [0m[0;32mrshell      [0m
+
+./obj:
+[37m.           [0m[37m..          [0mls.o        rshell.o    type_prompt.o
+
+./src:
+[37m.           [0m[37m..          [0m[37m.DS_Store   [0mls.cpp      rshell.cpp  rshell.h    type_prompt.cpp
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/ls -a -R[K[K[K[Kl -R[K[K[K[KRL[Kl
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [1;29mbin         [0m
+-rw-r--r--  1 Elvis  staff 18027 Jan 30 16:00 LICENSE     
+-rw-r--r--  1 Elvis  staff   410 Feb  5 16:53 Makefile    
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [1;29mobj         [0m
+-rw-r--r--  1 Elvis  staff   236 Jan 30 16:00 README.md   
+drwxr-xr-x  7 Elvis  staff   238 Feb  7 18:39 [1;29msrc         [0m
+drwxr-xr-x  4 Elvis  staff   136 Feb  7 18:32 [1;29mtest        [0m
+
+./bin:
+-rwxr-xr-x  1 Elvis  staff 24744 Feb  7 18:40 [0;32mls          [0m
+-rwxr-xr-x  1 Elvis  staff 16204 Feb  6 11:33 [0;32mrshell      [0m
+
+./obj:
+-rw-r--r--  1 Elvis  staff 20392 Feb  7 18:40 ls.o        
+-rw-r--r--  1 Elvis  staff  4608 Feb  6 11:33 rshell.o    
+-rw-r--r--  1 Elvis  staff  7636 Feb  6 11:33 type_prompt.o
+
+./src:
+-rw-r--r--  1 Elvis  staff  8118 Feb  7 18:39 ls.cpp      
+-rw-r--r--  1 Elvis  staff  6208 Jan 30 16:00 rshell.cpp  
+-rw-r--r--  1 Elvis  staff   188 Jan 30 16:00 rshell.h    
+-rw-r--r--  1 Elvis  staff   800 Jan 30 16:00 type_prompt.cpp
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/ls -alR
+drwxr-xr-x 11 Elvis  staff   374 Feb  7 18:39 [37m.           [0m
+drwxr-xr-x  9 Elvis  staff   306 Feb  5 16:42 [37m..          [0m
+-rw-r--r--  1 Elvis  staff  8196 Feb  7 18:39 [37m.DS_Store   [0m
+drwxr-xr-x 14 Elvis  staff   476 Feb  7 18:40 [37m.git        [0m
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [1;29mbin         [0m
+-rw-r--r--  1 Elvis  staff 18027 Jan 30 16:00 LICENSE     
+-rw-r--r--  1 Elvis  staff   410 Feb  5 16:53 Makefile    
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [1;29mobj         [0m
+-rw-r--r--  1 Elvis  staff   236 Jan 30 16:00 README.md   
+drwxr-xr-x  7 Elvis  staff   238 Feb  7 18:39 [1;29msrc         [0m
+drwxr-xr-x  4 Elvis  staff   136 Feb  7 18:32 [1;29mtest        [0m
+
+./bin:
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [37m.           [0m
+drwxr-xr-x 11 Elvis  staff   374 Feb  7 18:39 [37m..          [0m
+-rw-r--r--  1 Elvis  staff  6148 Feb  6 11:54 [37m.DS_Store   [0m
+-rwxr-xr-x  1 Elvis  staff 24744 Feb  7 18:40 [0;32mls          [0m
+-rwxr-xr-x  1 Elvis  staff 16204 Feb  6 11:33 [0;32mrshell      [0m
+
+./obj:
+drwxr-xr-x  5 Elvis  staff   170 Feb  7 18:40 [37m.           [0m
+drwxr-xr-x 11 Elvis  staff   374 Feb  7 18:39 [37m..          [0m
+-rw-r--r--  1 Elvis  staff 20392 Feb  7 18:40 ls.o        
+-rw-r--r--  1 Elvis  staff  4608 Feb  6 11:33 rshell.o    
+-rw-r--r--  1 Elvis  staff  7636 Feb  6 11:33 type_prompt.o
+
+./src:
+drwxr-xr-x  7 Elvis  staff   238 Feb  7 18:39 [37m.           [0m
+drwxr-xr-x 11 Elvis  staff   374 Feb  7 18:39 [37m..          [0m
+-rw-r--r--  1 Elvis  staff  6148 Feb  7 18:09 [37m.DS_Store   [0m
+-rw-r--r--  1 Elvis  staff  8118 Feb  7 18:39 ls.cpp      
+-rw-r--r--  1 Elvis  staff  6208 Jan 30 16:00 rshell.cpp  
+-rw-r--r--  1 Elvis  staff   188 Jan 30 16:00 rshell.h    
+-rw-r--r--  1 Elvis  staff   800 Jan 30 16:00 type_prompt.cpp
+
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ makebin/ls -l README.md LICENSE 
+-rw-r--r--  1 Elvis  staff   236 Jan 30 16:00 README.md   
+-rw-r--r--  1 Elvis  staff 18027 Jan 30 16:00 LICENSE 
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ v[Kbin/ls -l da
+error in stat: No such file or directory
+
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/ls -l da[K[K[K[K[KREADME.md -l
+README.md   
+usage: error format    
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ exit
+exit
+
+Script done on Sat Feb  7 18:48:21 2015
