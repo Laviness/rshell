@@ -114,6 +114,9 @@ error in stat: No such file or directory
 [01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/ls -l da[K[K[K[K[KREADME.md -l
 README.md   
 usage: error format    
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell/src[00m$ cd /Users/Elvis/Downl oads/cppcheck-1.68 
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Downloads/cppcheck-1.68[00m$ ./cppp[Kcheck ls.cpp 
+Checking ls.cpp...
 [01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ exit
 exit
 
