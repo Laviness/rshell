@@ -1,10 +1,15 @@
 VPATH = src
 CPPFLAGS = -ansi -pedantic -Wall -Werror
 
-objects = $(addprefix obj/, rshell.o type_prompt.o)
+objects = $(addprefix obj/, rshell.o type_prompt.o )
+
+all: bin/rshell bin/ls
 
 bin/rshell: $(objects)  | bin
 		g++ -o $@ $(objects)
+bin/ls: obj/ls.o  | bin
+		g++ -o $@ obj/ls.o
+
 obj/%.o: %.cpp
 		g++ $(CPPFLAGS) -c -o $@ $<
 obj/type_prompt.o: rshell.h
