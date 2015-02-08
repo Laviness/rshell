@@ -5,7 +5,7 @@
 #include <sys/types.h>
 #include <pwd.h>
 #include <grp.h>
-#include <uuid/uuid.h>
+//#include <uuid/uuid.h>
 #include <time.h>
 #include <dirent.h>
 #include <iomanip>
@@ -134,9 +134,9 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
     char *chpathname;
     char temp[1000];
     char connector[2]="/";
-    char list_of_cpath[10][1000];
-    char list_of_cname[10][1000];
-    int dirno[10];
+    char list_of_cpath[20][1000];
+    char list_of_cname[20][1000];
+    int dirno[20];
     //cout<<pathname<<endl;
     if(NULL==(dir=opendir(pathname)))
     {
@@ -162,7 +162,7 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
         }
         //if (lflag==1)
         //{
-            dflag=print_file(lflag,list_of_cpath[i],list_of_cname[i]);
+        dflag=print_file(lflag,list_of_cpath[i],list_of_cname[i]);
         //}
         /*else
         {
@@ -216,6 +216,9 @@ int main(int argc, char *argv[]){
     int lflag=0;
     char *sep = (char*)"-alR" ;                     // @/ =.~`!#$%^*()_+?><[]{}:
     char *word, *brkt;
+    char *temppathname;
+    char connector[2]="/";
+    char temp[1000];
     //DIR *dir;
     //int path_length=1000;
     
@@ -251,13 +254,26 @@ int main(int argc, char *argv[]){
                 }
             }
             else if (argv[i][0]!='-'){
-                print_file(lflag,pathname,argv[i]);
-                if (argv[i+1]==NULL)
-                    return 0;
+                strcpy(temp,pathname);
+                temppathname=strcat(temp,connector);
+                strcpy(temppathname,argv[i]);
+                print_file(lflag,temppathname,argv[i]);
+                if (lflag==0)
+                    cout<<endl;
+                if (i<argc-1){
+                    if (argv[i+1][0]=='\0')
+                        exit(0);
+                    if (argv[i+1][0]=='-'){
+                        cout<<"usage: error format"<<endl;
+                        exit(0);
+                    }
+                }
+                else if (i==argc-1)
+                    exit(0);
             }
             else{
                 cout<<"ls: illegal option -- 2"<<endl;
-                cout<<"usage: ls [-alR] [file ...]"<<endl;
+                cout<<"usage: ls [-alR] [file ...] rshell"<<endl;
                 return -1;
             }
         }
