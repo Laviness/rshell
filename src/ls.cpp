@@ -10,6 +10,7 @@
 #include <dirent.h>
 #include <iomanip>
 #include <string.h>
+#include <cstdlib>
 // must use valgrind and cppcheck and pass without bugs
 using namespace std;
 
@@ -118,7 +119,7 @@ int print_file(int lflag,char *pathname,char *filename){
        else
             cout<<setw(12)<<left<<filename;
     }
-    if (lflag == 1)
+    if (lflag == 1 && stat(pathname,&s)!=-1)
         cout<<endl;
     return dflag;
 }
