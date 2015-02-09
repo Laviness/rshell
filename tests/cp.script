@@ -1,27 +1,0 @@
-Script started on Sun Feb  8 19:18:46 2015
-[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell/tests[00m$ exitbin/cp 123 123make[Kbin/cp 123 123/usr/share/diict/web2 /Users/Elvis/Desktop[2PsdssfDesktop -t[A[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell/tests[00m$ cd ..[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbin/cp /usr/share/diict/web2 /Users/Elvis/Desktop -t
-bash: bin/cp: No such file or directory
-[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell/tests[00m$ cd ..
-[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ cd ..bin/cp /usr/share/dict/webb2 /Users/Elvis/Desktop -t
-Feb8 19:19 
-User :Elvis
-Using get and put way cost 79.954 ms
-Using read and write with buff cost 3.154 ms
-Using read and write with char cost 3821.21 ms
-[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/cp /usr/share/dict/webb2 /Users/Elvis/Desktop -t[A[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ cd ..[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbin/cp /usr/share/dict/webb2 /Users/Elvis/Desktop -t[A[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ exit[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbin/cp 123 123make[Kbin/cp 123 123exit[Kbin/cp /usr/share/dict/webb2 /Users/Elvis/Desktop -t[K[K[K[K[K[K[K[K[K[K123
-error in opendir: No such file or directory
-[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/cp /usr/share/dict/webb2 /Users/Elvis/123Desktop -t[K[K[K
-ERROR:Exist file
-[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/cp /usr/share/dict/webb2 /Users/Elvis/Desktop[4P123Desktop -t[A[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ cd ..[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbin/cp /usr/share/dict/webb2 /Users/Elvis/Desktop -t[A[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ cd ..[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbin/cp /usr/share/dict/webb2 /Users/Elvis/Desktop -t[A[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ cd ..[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbin/cp /usr/share/dict/webb2 /Users/Elvis/Desktop -t[A[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ exit[K
-[K[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cbin/cp 123 123
-error in stat:: No such file or directory
-[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ exit
-exit
-
-Script done on Sun Feb  8 19:19:22 2015
