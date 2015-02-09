@@ -21,10 +21,11 @@ int print_file(int lflag,char *pathname,char *filename){
     struct tm *clk;
     time_t time;
     int dflag=0;
+    int statflag;
     //char *blue=(char*)"\x1b[31m";
     //char *green=(char*)"\x1b[0;32m";
     //char *grey=(char*)"\x1b[30;1m";
-    if(stat(pathname,&s)==-1)
+    if((stat(pathname,&s)=statflag)==-1)
     {
         perror("error in stat");
     }
@@ -119,8 +120,9 @@ int print_file(int lflag,char *pathname,char *filename){
        else
             cout<<setw(12)<<left<<filename;
     }
-    if (lflag == 1 && stat(pathname,&s)!=-1)
+    if (lflag == 1 && statflag!=-1)
         cout<<endl;
+        
     free(clk);
     return dflag;
 }
@@ -139,13 +141,18 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
     char list_of_cpath[20][1000];
     char list_of_cname[20][1000];
     int dirno[20];
+    int readflag;
     //cout<<pathname<<endl;
     if(NULL==(dir=opendir(pathname)))
     {
         perror("error in opendir");
     }
-    while ((pdir=readdir(dir))!=NULL)
+    while (((pdir=readdir(dir))=readflag)!=NULL)
     {
+        if (readflag==NULL){
+            perror("error in readdir");
+            break;
+        }
         strcpy(temp,pathname);
         chpathname=strcat(temp,connector);
         strcpy(list_of_cname[i],pdir->d_name);
@@ -238,7 +245,7 @@ int main(int argc, char *argv[]){
     //char *argv[2]={(char*)"ls",(char*)"-alR"};
     
     if (argc < 1){
-        perror("not enough input arguments");
+        cout<<"not enough input arguments"<endl;
         return -1;
     }
     else if (argc >1){
