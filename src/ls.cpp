@@ -121,6 +121,7 @@ int print_file(int lflag,char *pathname,char *filename){
     }
     if (lflag == 1 && stat(pathname,&s)!=-1)
         cout<<endl;
+    free(clk);
     return dflag;
 }
 
@@ -207,7 +208,7 @@ void print_al_info(int lflag, int aflag, int Rflag, char *pathname){
             }
         }
     }
-    
+    free(pdir);
     return;
 }
 
@@ -281,7 +282,10 @@ int main(int argc, char *argv[]){
     }
     
     print_al_info(lflag,aflag,Rflag,pathname);
-    
+    free(word);
+    free(brkt);
+
+
     
     return 0;
     
