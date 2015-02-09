@@ -29,11 +29,11 @@ void cp(char *source, char *destination, char * buf, int size){
     }
 
 
-    int size;
+    int reads;
 
 
     //read until the end of file is reached
-    while((size = read(sfd, buf, size)) != 0){
+    while((reads = read(sfd, buf, size)) != 0){
         
        if( write(dfd, buf, size) == -1){
        perror("Write failed");
@@ -41,6 +41,13 @@ void cp(char *source, char *destination, char * buf, int size){
        
        }
      }
+     if(close(sfd) == -1){
+         perror("Close failed");
+     }
+
+     if(close(dfd) == -1){
+         perror("Close failed");
+      }
     return;    
 }
 
