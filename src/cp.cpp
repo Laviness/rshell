@@ -87,6 +87,11 @@ void cp(char *source, char *destination, char * buf, int size){
 
 int main(int argc, char **argv){
 
+    if(argc < 3){
+        printf("Not enough arguments to cp\n");
+        return 0;
+    }
+
     bool all = false;
     if(argv[3] != NULL){
         // Do all three methods   
