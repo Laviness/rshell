@@ -1,0 +1,97 @@
+Script started on Sun Feb 22 22:21:54 2015
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ bin/rshell 
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ cat >     ls > lol
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ cat lol
+LICENSE
+Makefile
+README.md
+bin
+lol
+obj
+src
+tests
+typescript
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ ls -l > lol
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ cat lol
+total 72
+-rw-r--r--  1 Elvis  staff  18027 Feb  8 20:07 LICENSE
+-rw-r--r--  1 Elvis  staff    483 Feb 13 10:44 Makefile
+-rw-r--r--  1 Elvis  staff    236 Feb  8 20:07 README.md
+drwxr-xr-x  5 Elvis  staff    170 Feb 22 22:19 bin
+-rw-r--r--  1 Elvis  staff     60 Feb 22 22:22 lol
+drwxr-xr-x  5 Elvis  staff    170 Feb 22 22:19 obj
+drwxr-xr-x  7 Elvis  staff    238 Feb 22 22:19 src
+drwxr-xr-x  6 Elvis  staff    204 Feb 22 22:16 tests
+-rw-r--r--  1 Elvis  staff     43 Feb 22 22:21 typescript
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ ls >> lol
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ cat lol
+total 72
+-rw-r--r--  1 Elvis  staff  18027 Feb  8 20:07 LICENSE
+-rw-r--r--  1 Elvis  staff    483 Feb 13 10:44 Makefile
+-rw-r--r--  1 Elvis  staff    236 Feb  8 20:07 README.md
+drwxr-xr-x  5 Elvis  staff    170 Feb 22 22:19 bin
+-rw-r--r--  1 Elvis  staff     60 Feb 22 22:22 lol
+drwxr-xr-x  5 Elvis  staff    170 Feb 22 22:19 obj
+drwxr-xr-x  7 Elvis  staff    238 Feb 22 22:19 src
+drwxr-xr-x  6 Elvis  staff    204 Feb 22 22:16 tests
+-rw-r--r--  1 Elvis  staff     43 Feb 22 22:21 typescript
+LICENSE
+Makefile
+README.md
+bin
+lol
+obj
+src
+tests
+typescript
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ lss >w  2> err
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ cat err
+error in execvp: No such file or directory
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ lss 2>> err
+fdout21
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ cat err
+error in execvp: No such file or directory
+error in execvp: No such file or directory
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ cat < lol
+total 72
+-rw-r--r--  1 Elvis  staff  18027 Feb  8 20:07 LICENSE
+-rw-r--r--  1 Elvis  staff    483 Feb 13 10:44 Makefile
+-rw-r--r--  1 Elvis  staff    236 Feb  8 20:07 README.md
+drwxr-xr-x  5 Elvis  staff    170 Feb 22 22:19 bin
+-rw-r--r--  1 Elvis  staff     60 Feb 22 22:22 lol
+drwxr-xr-x  5 Elvis  staff    170 Feb 22 22:19 obj
+drwxr-xr-x  7 Elvis  staff    238 Feb 22 22:19 src
+drwxr-xr-x  6 Elvis  staff    204 Feb 22 22:16 tests
+-rw-r--r--  1 Elvis  staff     43 Feb 22 22:21 typescript
+LICENSE
+Makefile
+README.md
+bin
+lol
+obj
+src
+tests
+typescript
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ ls | head -4
+LICENSE
+Makefile
+README.md
+bin
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ ls | grep M
+Makefile
+README.md
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ cat <<< "extracredit"
+extracredit
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ ls | head -3 > list
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ cat list
+LICENSE
+Makefile
+README.md
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ ls > list | head -2
+LICENSE
+Makefile
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR /CS 100/rshell$ exit
+Elvis@Lius-MacBook-Air:~/Documents/UCR /CS 100/rshell$ exit
+exit
+
+Script done, output file is typescript
