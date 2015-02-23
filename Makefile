@@ -3,14 +3,14 @@ CPPFLAGS = -ansi -pedantic -Wall -Werror
 
 objects = $(addprefix obj/, rshell.o type_prompt.o )
 
-all: bin/rshell bin/ls bin/cp
+all: bin/rshell bin/ls
 
 bin/rshell: $(objects)  | bin
 		g++ -o $@ $(objects)
 bin/ls: obj/ls.o  | bin
 		g++ -o $@ obj/ls.o
-bin/cp: obj/cp.o | bin
-		g++ -o $@ obj/cp.o
+#bin/cp: obj/cp.o | bin
+#		g++ -o $@ obj/cp.o
 
 obj/%.o: %.cpp
 		g++ $(CPPFLAGS) -c -o $@ $<
