@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <fcntl.h>
+#include <signal.h>
 #include "rshell.h"
 using namespace std;
 
@@ -30,9 +31,88 @@ bool change_fdflag=false;
 bool change_fd2flag=false;
 bool operateflag=true;                          //store the status of an execution
 bool pipeflag=false;
+bool INTflag=false;                             //used for ^c interrupt
+bool TSTPflag=false;
 int parse(int arg_number);
 bool Triredirectionflag=false;
 pid_t waitpid(pid_t pid, int *stat_loc, int options);
+
+char *ENVPATH;
+char ENVDIR[20][1000];
+int envpath_num=0;
+
+void handler(int i,siginfo_t *info, void *ptr){//handler for the interrupt
+    if(i==SIGINT) {
+        INTflag=true;
+    }
+    if(i==SIGTSTP) {
+        TSTPflag=true;
+    }
+}
+
+int builtin_command(int arg_number){
+    char pathname[1000];
+    if((getcwd(pathname,1000))==NULL)
+    {
+        perror("error in getcwd");
+    }
+    if (strcmp(command,"cd")==0){
+        char cdpath[1000];
+        char connect[20]="/";
+        strcpy(cdpath,pathname);
+        if (arg_number==2){
+            if ((argv[1][0]-'/')==0){
+                if (chdir(argv[1])!=0){
+                    perror("error in change directory");
+                }
+            }
+            
+            else{
+                if ((argv[1][0]-'/')!=0){
+                    strncat(cdpath,connect,strlen(connect)+1);
+                }
+                strncat(cdpath,argv[1],strlen(argv[1])+1);
+                if (chdir(cdpath)!=0){
+                    perror("error in change directory");
+                }
+            }
+        }
+        else {
+            cout<<"error in cd"<<endl;
+            cout<<"cd usage:"<<endl;
+            cout<<"cd [pathname]"<<endl;
+        }
+        return 0;
+    }
+    return 1;
+}
+
+
+int getpath(){                                  //read path from env
+    memset(ENVDIR,'\0',sizeof(ENVDIR));
+    if (NULL==(ENVPATH=getenv("PATH"))){
+        perror("no env named PATH");
+    }
+    cout<<"ENVPATH="<<ENVPATH<<endl;
+    int i=0;
+    int j=0;
+    while(ENVPATH[0]-' '!=0){
+        if(ENVPATH[0]-':'==0){
+            ENVPATH++;
+            cout<<"ENVDIR["<<i<<"]="<<ENVDIR[i]<<endl;
+            i++;
+            j=0;
+        }
+        ENVDIR[i][j]=ENVPATH[0];
+        //cout<<"PATHc"<<ENVPATH[0]<<endl;
+        //cout<<"ENVDIR[i]"<<ENVDIR[i][j]<<endl;
+        j++;
+        ENVPATH++;
+    }
+    cout<<"ENVDIR["<<i<<"]="<<ENVDIR[i]<<endl;
+    envpath_num=i+1;
+    return 0;
+}
 
 int read_command()                              //divide the command one by one
 {
@@ -70,6 +150,7 @@ int read_command()                              //divide the command one by one
 	}
     arg_number=n;
     return arg_number;
+
 }
 
 int change_fd (const char *redir, const char *file)
@@ -323,6 +404,12 @@ int parse(int arg_number)
                         //cout<<"exit value: "<<WEXITSTATUS(status)<<endl;
                         //cout<<"child process abnormally exited"<<endl;
                     }
+                    if(INTflag==true){
+                        INTflag=false;
+                    }
+                    if(TSTPflag==true){
+                        TSTPflag=false;
+                    }
                     //scout<<"status: "<<status<<endl;
                     
                     
@@ -405,6 +492,24 @@ int parse(int arg_number)
                 else if(pid == 0)
                 {
                     //cout << "I am child" <<pid<<endl;
+                    if (INTflag==true){
+                        exit(0);
+                        INTflag=false;
+                    }
+                   
+                    if(TSTPflag==true){
+                        int abspid;
+                        if(-1==(abspid=getpid())){
+                            perror("error in getpid");
+                        }
+                        cout<<"pid to be kill="<<abspid<<endl;
+                        if(-1==kill(abspid,SIGSTOP)){
+                            perror("error in kill");
+                        }
+                        SIGCONT;
+                        TSTPflag=false;
+                    }
+
                     
                     if (change_fdflag==true){
                         //cout<<"384"<<endl;
@@ -427,7 +532,7 @@ int parse(int arg_number)
                         if (execvp(command[0],parameter)!=0)   //whenever vp runs , it take over
                             //forever
                         {
-                            perror("error in execvp");
+                            perror("error in execv");
                             operateflag=false;
                             exit(7);                        //if error happens, stop it from being
                             //zombie
@@ -471,8 +576,36 @@ int parse(int arg_number)
 
 int main()
 {
+    getpath();
+    struct sigaction act;
+    memset(&act, 0, sizeof(act));
+    act.sa_sigaction = handler;
+    act.sa_flags = SA_SIGINFO;
+    if(-1==sigaction(SIGINT,&act,NULL)){
+        perror("error in sigaction");
+    }
+    if(-1==sigaction(SIGTSTP,&act,NULL)){
+        perror("error in sigaction");
+    }
 	while(strncmp(command,"exit",command_max_length)!=0)
 	{
+        if (INTflag==true){
+            exit(0);
+            INTflag=false;
+        }
+        if(TSTPflag==true){
+            int pid;
+            if(-1==(pid=getpid())){
+                perror("error in getpid");
+            }
+            cout<<"pid to be kill="<<pid<<endl;
+            if(-1==kill(pid,SIGSTOP)){
+                perror("error in kill");
+            }
+            SIGCONT;
+            TSTPflag=false;
+        }
+        
         type_prompt();
         cin.getline(command, command_max_length, '\n');
         if(strncmp(command,"exit",command_max_length)==0)
@@ -482,7 +615,9 @@ int main()
         }
         n=0;
         arg_number=read_command();
-        parse(arg_number);
+        if (builtin_command(arg_number)==1){
+            parse(arg_number);
+        }
         for (int i=0;i<command_max_length;i++)
         {
             command[i]='\0';
