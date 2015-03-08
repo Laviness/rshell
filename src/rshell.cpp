@@ -328,6 +328,7 @@ int parse(int arg_number)
     int j=0;
     int l=0;
     char *command[2];
+    memset(command,'\0',sizeof(command));
     for (i=0;i<arg_number;i++)
     {
  
