@@ -8,5 +8,5 @@
 #Usage
  ```
     make 
-    ./program
+    bin/rshell
  ```
