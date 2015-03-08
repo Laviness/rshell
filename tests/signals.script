@@ -1,0 +1,80 @@
+Script started on Sun Mar  8 03:42:29 2015
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR/CS-100/rshell[00m$ man strcpyreaddiropendirke && bin/rshell [8Pn opendirreaddir[1Pstrcpyreaddiropendirke && bin/rshell 
+make: Nothing to be done for `all'.
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ cd src/
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src$ ls
+Timer.h         ls.cpp          rshell.h
+cp.cpp          rshell.cpp      type_prompt.cpp
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src$ cd ..
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ ls
+LICENSE      README.md    [36mbin[m[m          [36mobj[m[m          [36msrc[m[m          typescript
+Makefile     [31ma.out[m[m        infinite.cpp path         [36mtests[m[m
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ cd /Users/Elvis/Documents/UCR/CS-100/rshell/src 
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src$ ls
+Timer.h         ls.cpp          rshell.h
+cp.cpp          rshell.cpp      type_prompt.cpp
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src$ cd ..
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ cd 123
+error in change directory: No such file or directory
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ mkdir 123
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ chmod 000 123
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ cd 123
+error in change directory: Permission denied
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ ls
+[36m123[m[m          Makefile     [31ma.out[m[m        infinite.cpp path         [36mtests[m[m
+LICENSE      README.md    [36mbin[m[m          [36mobj[m[m          [36msrc[m[m          typescript
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ cd .
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ ls
+LICENSE      README.md    [36mbin[m[m          [36mobj[m[m          [36msrc[m[m          typescript
+Makefile     [31ma.out[m[m        infinite.cpp path         [36mtests[m[m
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ cd src/
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src$ mkdir 123
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src$ cd ..
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ cd /src/123
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src/123$ ls
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src/123$ cd .. && cd ..
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ ls 
+LICENSE      README.md    [36mbin[m[m          [36mobj[m[m          [36msrc[m[m          typescript
+Makefile     [31ma.out[m[m        infinite.cpp path         [36mtests[m[m
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ cd 123 || s cd src
+error in change directory: No such file or directory
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src$ ls
+[36m123[m[m             cp.cpp          rshell.cpp      type_prompt.cpp
+Timer.h         ls.cpp          rshell.h
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src$ cd 1213  3;cd .
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/src/123$ cd ..;cd ..
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ ps
+  PID TTY           TIME CMD
+38757 ttys000    0:00.05 -bash
+39246 ttys000    0:00.00 script
+37610 ttys001    0:00.04 -bash
+39247 ttys002    0:00.01 /bin/bash -i
+39249 ttys002    0:00.00 bin/rshell
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ grep hello
+hello world
+hello world
+hello maki   ike     oooooo
+hellooooooo
+^C[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ ps
+  PID TTY           TIME CMD
+38757 ttys000    0:00.05 -bash
+39246 ttys000    0:00.01 script
+37610 ttys001    0:00.04 -bash
+39247 ttys002    0:00.01 /bin/bash -i
+39249 ttys002    0:00.00 bin/rshell
+39252 ttys002    0:00.00 (grep)
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ ./a.out
+1
+2
+3
+4
+5
+^C[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ ps
+  PID TTY           TIME CMD
+38757 ttys000    0:00.05 -bash
+39246 ttys000    0:00.01 script
+37610 ttys001    0:00.04 -bash
+39247 ttys002    0:00.01 /bin/bash -i
+39249 ttys002    0:00.00 bin/rshell
+39252 ttys002    0:00.00 (grep)
+39254 ttys002    0:00.00 (a.out)
