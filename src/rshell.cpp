@@ -40,7 +40,7 @@ bool Triredirectionflag=false;
 pid_t waitpid(pid_t pid, int *stat_loc, int options);
 
 char *ENVPATH;
-char ENVDIR[20][1000];
+char ENVDIR[100][1000];
 int envpath_num=0;
 
 void handler(int i,siginfo_t *info, void *ptr){//handler for the interrupt
