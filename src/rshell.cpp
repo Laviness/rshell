@@ -21,7 +21,7 @@ char command[command_max_length];               //used for storing the command i
 char *sep = (char*)"\\ " ;                     // @/ =.~`!#$%^*()_+?><[]{}:
 char *word, *brkt;                              //used for store the output from strtok_r
 char *argv[arg_max];                            //store command one by one
-char *parameter[para_max];                      //parameter that will be transmit to execvp
+char *parameter[para_max];                      //parameter that will be transmit to execv
 char *parameter2[para_max];                     //parameter for the second command
 int arg_number;                                 //count the number of args to be proceed
 int n;
@@ -497,13 +497,20 @@ int parse(int arg_number)
                             }
                             cout<<"buf content = "<<buf<<endl<<endl;
                             */
-                            if (execvp(command[1],parameter2)!=0)   //whenever vp runs , it take over
-                                //forever
-                            {
-                                perror("error in execvp");
-                                operateflag=false;
-                                exit(7);                        //if error happens, stop it from being
-                                //zombie
+                            if (builtin_flag==true){
+                                exit(0);
+                            }
+                            else{
+                                int exec_flag=1;
+                                exec_flag=findpath(argv[l]);
+                                if (exec_flag!=0)   //whenever vp runs , it take over
+                                    //forever
+                                {
+                                    perror("error in execv");
+                                    operateflag=false;
+                                    exit(7);                        //if error happens, stop it from                        being
+                                    //zombie
+                                }
                             }
                             else
                                 exit(0);
