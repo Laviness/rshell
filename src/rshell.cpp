@@ -101,7 +101,7 @@ int getpath(){                                  //read path from env
     if (NULL==(ENVPATH=getenv("PATH"))){
         perror("no env named PATH");
     }
-    //cout<<"ENVPATH="<<ENVPATH<<endl;
+    cout<<"ENVPATH="<<ENVPATH<<endl;
     if (NULL==(getcwd(dirpath,1000))){
         perror("error in get current path");
     }
