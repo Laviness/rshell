@@ -94,11 +94,16 @@ int builtin_command(const char* cmd,const char* path){
 
 
 int getpath(){                                  //read path from env
+    char dirpath[1000];
+    memset(dirpath,'\0',sizeof(dirpath));
     memset(ENVDIR,'\0',sizeof(ENVDIR));
     if (NULL==(ENVPATH=getenv("PATH"))){
         perror("no env named PATH");
     }
     //cout<<"ENVPATH="<<ENVPATH<<endl;
+    if (NULL==(getcwd(dirpath,1000))){
+        perror("error in get current path");
+    }
     int i=0;
     int j=0;
     while(ENVPATH[0]-' '!=0){
@@ -115,8 +120,9 @@ int getpath(){                                  //read path from env
         ENVPATH++;
     }
     //cout<<"ENVDIR["<<i<<"]="<<ENVDIR[i]<<endl;
-    envpath_num=i;
-    strcpy(ENVDIR[i],"");
+    envpath_num=i+1;
+    strcpy(ENVDIR[i+1],"");
+    strcpy(ENVDIR[i],dirpath);
     //cout<<"path number"<<envpath_num<<endl;
     return 0;
 }
@@ -512,9 +518,9 @@ int parse(int arg_number)
                                     //zombie
                                 }
                             }
-                            else
+                            /*else
                                 exit(0);
-                            /*if (-1==close(fd[0])){
+                            if (-1==close(fd[0])){
                                 perror ("ERROR in close");
                             }
                             if (-1==close(fd[1])){

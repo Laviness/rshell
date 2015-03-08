@@ -78,6 +78,18 @@ hellooooooo
 39249 ttys002    0:00.00 bin/rshell
 39252 ttys002    0:00.00 (grep)
 39254 ttys002    0:00.00 (a.out)
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ which ls
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ ls
+error in execv: No such file or directory
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ cd bin
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/bin$ ls
+[0;32mls          [0m[0;32mrshell      [0m
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/bin$ ./ls
+[0;32mls          [0m[0;32mrshell      [0m
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/bin$ /ls
+error in execv: No such file or directory
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell/bin$ llls
+error in execv: No such file or directory
 [rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ exit
 [01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR/CS-100/rshell[00m$ exit
 exit
