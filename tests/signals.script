@@ -78,3 +78,8 @@ hellooooooo
 39249 ttys002    0:00.00 bin/rshell
 39252 ttys002    0:00.00 (grep)
 39254 ttys002    0:00.00 (a.out)
+[rshell]Elvis@Lius-MacBook-Air.local:~/Documents/UCR/CS-100/rshell$ exit
+[01;32mElvis@Lius-MacBook-Air[00m:[01;36m~/Documents/UCR/CS-100/rshell[00m$ exit
+exit
+
+Script done on Sun Mar  8 05:10:43 2015
