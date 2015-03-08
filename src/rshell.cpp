@@ -60,12 +60,12 @@ int builtin_command(const char* cmd,const char* path){
     }
     if (strcmp(cmd,"cd")==0){
         char cdpath[1000];
+        memset(cdpath,'\0',sizeof(cdpath));
         char connect[20]="/";
-        if (strstr(path,pathname)!=0)
-            strcpy(cdpath,pathname);
         if (arg_number>=2){
             if ((path[0]-'/')==0){
                 strncat(cdpath,path,strlen(path)+1);
+                //cout<<"path="<<cdpath<<endl;
                 if (chdir(cdpath)!=0){
                     perror("error in change directory");
                     return 1;
@@ -74,6 +74,7 @@ int builtin_command(const char* cmd,const char* path){
             
             else{
                 if ((path[0]-'/')!=0){
+                    strcpy(cdpath,pathname);
                     strncat(cdpath,connect,strlen(connect)+1);
                 }
                 strncat(cdpath,path,strlen(path)+1);
