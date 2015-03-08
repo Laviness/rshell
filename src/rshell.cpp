@@ -95,6 +95,7 @@ int builtin_command(const char* cmd,const char* path){
 
 int getpath(){                                  //read path from env
     char dirpath[1000];
+    cout<<"getpath"<<endl;
     memset(dirpath,'\0',sizeof(dirpath));
     memset(ENVDIR,'\0',sizeof(ENVDIR));
     if (NULL==(ENVPATH=getenv("PATH"))){
