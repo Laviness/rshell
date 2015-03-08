@@ -61,7 +61,8 @@ int builtin_command(const char* cmd,const char* path){
     if (strcmp(cmd,"cd")==0){
         char cdpath[1000];
         char connect[20]="/";
-        strcpy(cdpath,pathname);
+        if (strstr(path,pathname)!=0)
+            strcpy(cdpath,pathname);
         if (arg_number>=2){
             if ((path[0]-'/')==0){
                 strncat(cdpath,path,strlen(path)+1);
