@@ -95,13 +95,13 @@ int builtin_command(const char* cmd,const char* path){
 
 int getpath(){                                  //read path from env
     char dirpath[1000];
-    cout<<"getpath"<<endl;
+    //cout<<"getpath"<<endl;
     memset(dirpath,'\0',sizeof(dirpath));
     memset(ENVDIR,'\0',sizeof(ENVDIR));
     if (NULL==(ENVPATH=getenv("PATH"))){
         perror("no env named PATH");
     }
-    cout<<"ENVPATH="<<ENVPATH<<endl;
+    //cout<<"ENVPATH="<<ENVPATH<<endl;
     if (NULL==(getcwd(dirpath,1000))){
         perror("error in get current path");
     }
@@ -658,7 +658,7 @@ int main()
     if(-1==sigaction(SIGTSTP,&act,NULL)){
         perror("error in sigaction");
     }
-    cout<<"before cmd"<<endl;
+    //cout<<"before cmd"<<endl;
 	while(strncmp(command,"exit",command_max_length)!=0)
 	{
         if (INTflag==true){
