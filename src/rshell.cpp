@@ -30,6 +30,7 @@ bool jumpflag=false;                            //if the flag is set to be true,
                                                 //next arg, for the logic operation
 bool change_fdflag=false;
 bool change_fd2flag=false;
+bool builtin_flag=false;
 bool operateflag=true;                          //store the status of an execution
 bool pipeflag=false;
 bool INTflag=false;                             //used for ^c interrupt
@@ -51,30 +52,33 @@ void handler(int i,siginfo_t *info, void *ptr){//handler for the interrupt
     }
 }
 
-int builtin_command(int arg_number){
+int builtin_command(const char* cmd,const char* path){
     char pathname[1000];
     if((getcwd(pathname,1000))==NULL)
     {
         perror("error in getcwd");
     }
-    if (strcmp(command,"cd")==0){
+    if (strcmp(cmd,"cd")==0){
         char cdpath[1000];
         char connect[20]="/";
         strcpy(cdpath,pathname);
-        if (arg_number==2){
-            if ((argv[1][0]-'/')==0){
-                if (chdir(argv[1])!=0){
+        if (arg_number>=2){
+            if ((path[0]-'/')==0){
+                strncat(cdpath,path,strlen(path)+1);
+                if (chdir(cdpath)!=0){
                     perror("error in change directory");
+                    return 1;
                 }
             }
             
             else{
-                if ((argv[1][0]-'/')!=0){
+                if ((path[0]-'/')!=0){
                     strncat(cdpath,connect,strlen(connect)+1);
                 }
-                strncat(cdpath,argv[1],strlen(argv[1])+1);
+                strncat(cdpath,path,strlen(path)+1);
                 if (chdir(cdpath)!=0){
                     perror("error in change directory");
+                    return 1;
                 }
             }
         }
@@ -82,10 +86,10 @@ int builtin_command(int arg_number){
             cout<<"error in cd"<<endl;
             cout<<"cd usage:"<<endl;
             cout<<"cd [pathname]"<<endl;
+            return 1;
         }
-        return 0;
     }
-    return 1;
+    return 0;
 }
 
 
@@ -112,6 +116,7 @@ int getpath(){                                  //read path from env
     }
     //cout<<"ENVDIR["<<i<<"]="<<ENVDIR[i]<<endl;
     envpath_num=i;
+    strcpy(ENVDIR[i],"");
     //cout<<"path number"<<envpath_num<<endl;
     return 0;
 }
@@ -122,9 +127,11 @@ int findpath(const char *cmd){
     char connector[2]="/";
     char execpath[1000];
     memset(execpath,'\0',1000);
-    while (i<envpath_num){
+    while (i<=envpath_num){
         strncpy(execpath,ENVDIR[i],strlen(ENVDIR[i])+1);
-        strncat(execpath,connector,strlen(connector)+1);
+        if (i!=envpath_num){
+            strncat(execpath,connector,strlen(connector)+1);
+        }
         strncat(execpath,cmd,strlen(cmd)+1);
         //cout<<"path="<<execpath<<endl;
         find_flag=execv(execpath,parameter);
@@ -397,6 +404,11 @@ int parse(int arg_number)
                     i=i+1;
                 }
             }
+            if (strcmp(argv[l],"cd")==0){
+                builtin_flag=true;
+            }
+            
+            
             if (jumpflag==true)
             {
                 jumpflag=false;
@@ -430,6 +442,15 @@ int parse(int arg_number)
                     }
                     if(TSTPflag==true){
                         TSTPflag=false;
+                    }
+                    //cout<<"jumpflag="<<jumpflag<<endl;
+                    if (jumpflag==false){
+                        if (builtin_flag==true){
+                            if(1==builtin_command(argv[l],parameter[1])){
+                                operateflag=false;
+                            }
+                            builtin_flag=false;
+                        }
                     }
                     //scout<<"status: "<<status<<endl;
                     
@@ -527,7 +548,7 @@ int parse(int arg_number)
                         if(-1==kill(abspid,SIGSTOP)){
                             perror("error in kill");
                         }
-                        SIGCONT;
+                        
                         TSTPflag=false;
                     }
 
@@ -550,13 +571,20 @@ int parse(int arg_number)
                         }
                         //cout<<"fd[1]="<<fd[1]<<endl;
                         //cout<<"stdout="<<fileno(stdout)<<endl;
-                        if (execvp(command[0],parameter)!=0)   //whenever vp runs , it take over
-                            //forever
-                        {
-                            perror("error in execv");
-                            operateflag=false;
-                            exit(7);                        //if error happens, stop it from being
-                            //zombie
+                        if (builtin_flag==true){
+                            exit(0);
+                        }
+                        else{
+                            int exec_flag=1;
+                            exec_flag=findpath(argv[l]);
+                            if (exec_flag!=0)   //whenever vp runs , it take over
+                                //forever
+                            {
+                                perror("error in execv");
+                                operateflag=false;
+                                exit(7);                        //if error happens, stop it from                        being
+                                //zombie
+                            }
                         }
                     }//command1
                     
@@ -564,15 +592,20 @@ int parse(int arg_number)
                         /*cout<<"413"<<endl;
                         cout<<"argv[l]:"<<argv[l]<<endl;
                         cout<<"parameter="<<parameter[1]<<endl;*/
-                        int exec_flag=1;
-                        exec_flag=findpath(argv[l]);
-                        if (exec_flag!=0)   //whenever vp runs , it take over
-                                                            //forever
-                        {
-                            perror("error in execvp");
-                            operateflag=false;
-                            exit(7);                        //if error happens, stop it from                        being
+                        if (builtin_flag==true){
+                            exit(0);
+                        }
+                        else{
+                            int exec_flag=1;
+                            exec_flag=findpath(argv[l]);
+                            if (exec_flag!=0)   //whenever vp runs , it take over
+                                                                //forever
+                            {
+                                perror("error in execv");
+                                operateflag=false;
+                                exit(7);                        //if error happens, stop it from                        being
                                                             //zombie
+                            }
                         }
                      
                     }//exec
@@ -621,11 +654,9 @@ int main()
             if(-1==(pid=getpid())){
                 perror("error in getpid");
             }
-            cout<<"pid to be kill="<<pid<<endl;
             if(-1==kill(pid,SIGSTOP)){
                 perror("error in kill");
             }
-            SIGCONT;
             TSTPflag=false;
         }
         
@@ -638,9 +669,7 @@ int main()
         }
         n=0;
         arg_number=read_command();
-        if (builtin_command(arg_number)==1){
-            parse(arg_number);
-        }
+        parse(arg_number);
         for (int i=0;i<command_max_length;i++)
         {
             command[i]='\0';
