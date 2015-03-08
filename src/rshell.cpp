@@ -657,6 +657,7 @@ int main()
     if(-1==sigaction(SIGTSTP,&act,NULL)){
         perror("error in sigaction");
     }
+    cout<<"before cmd"<<endl;
 	while(strncmp(command,"exit",command_max_length)!=0)
 	{
         if (INTflag==true){
