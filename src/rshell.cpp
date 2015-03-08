@@ -10,6 +10,7 @@
 #include <errno.h>
 #include <fcntl.h>
 #include <signal.h>
+#include <dirent.h>
 #include "rshell.h"
 using namespace std;
 
@@ -93,13 +94,13 @@ int getpath(){                                  //read path from env
     if (NULL==(ENVPATH=getenv("PATH"))){
         perror("no env named PATH");
     }
-    cout<<"ENVPATH="<<ENVPATH<<endl;
+    //cout<<"ENVPATH="<<ENVPATH<<endl;
     int i=0;
     int j=0;
     while(ENVPATH[0]-' '!=0){
-        if(ENVPATH[0]-':'==0){
+        if(ENVPATH[0]-':'==0 && strlen(ENVPATH)>1){
             ENVPATH++;
-            cout<<"ENVDIR["<<i<<"]="<<ENVDIR[i]<<endl;
+            //cout<<"ENVDIR["<<i<<"]="<<ENVDIR[i]<<endl;
             i++;
             j=0;
         }
@@ -109,9 +110,29 @@ int getpath(){                                  //read path from env
         j++;
         ENVPATH++;
     }
-    cout<<"ENVDIR["<<i<<"]="<<ENVDIR[i]<<endl;
-    envpath_num=i+1;
+    //cout<<"ENVDIR["<<i<<"]="<<ENVDIR[i]<<endl;
+    envpath_num=i;
+    //cout<<"path number"<<envpath_num<<endl;
     return 0;
+}
+
+int findpath(const char *cmd){
+    int find_flag=1;
+    int i=0;
+    char connector[2]="/";
+    char execpath[1000];
+    memset(execpath,'\0',1000);
+    while (i<envpath_num){
+        strncpy(execpath,ENVDIR[i],strlen(ENVDIR[i])+1);
+        strncat(execpath,connector,strlen(connector)+1);
+        strncat(execpath,cmd,strlen(cmd)+1);
+        //cout<<"path="<<execpath<<endl;
+        find_flag=execv(execpath,parameter);
+        i++;
+        if (find_flag==0)
+            break;
+    }
+    return find_flag;
 }
 
 int read_command()                              //divide the command one by one
@@ -543,12 +564,14 @@ int parse(int arg_number)
                         /*cout<<"413"<<endl;
                         cout<<"argv[l]:"<<argv[l]<<endl;
                         cout<<"parameter="<<parameter[1]<<endl;*/
-                        if (execvp(argv[l],parameter)!=0)   //whenever vp runs , it take over
+                        int exec_flag=1;
+                        exec_flag=findpath(argv[l]);
+                        if (exec_flag!=0)   //whenever vp runs , it take over
                                                             //forever
                         {
                             perror("error in execvp");
                             operateflag=false;
-                            exit(7);                        //if error happens, stop it from being
+                            exit(7);                        //if error happens, stop it from                        being
                                                             //zombie
                         }
                      
