@@ -1,53 +1,186 @@
-Script started on Mon Feb  2 15:39:21 2015
-[01;32mElvis@ucrwpa1-2-132-174[00m:[01;36m~/Documents/UCR /CS 100/rshell/tests[00m$ cd ..
-[01;32mElvis@ucrwpa1-2-132-174[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ vi[K[Kbin/rshell 
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls
-LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls -a
-[36m.[m[m         .DS_Store LICENSE   README.md [36mobj[m[m       test
-[36m..[m[m        [36m.git[m[m      Makefile  [36mbin[m[m       [36msrc[m[m       [36mtests[m[m
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls -a -l  
-total 88
-drwxr-xr-x  12 Elvis  staff    408 Feb  2 15:38 [36m.[m[m
-drwxr-xr-x  11 Elvis  staff    374 Jan 30 16:00 [36m..[m[m
--rw-r--r--@  1 Elvis  staff   8196 Feb  2 15:39 .DS_Store
-drwxr-xr-x  13 Elvis  staff    442 Feb  2 05:12 [36m.git[m[m
--rw-r--r--   1 Elvis  staff  18027 Jan 30 16:00 LICENSE
--rw-r--r--   1 Elvis  staff    339 Jan 30 16:00 Makefile
--rw-r--r--   1 Elvis  staff    236 Jan 30 16:00 README.md
-drwxr-xr-x   3 Elvis  staff    102 Feb  2 15:38 [36mbin[m[m
-drwxr-xr-x   5 Elvis  staff    170 Feb  2 15:39 [36mobj[m[m
-drwxr-xr-x   6 Elvis  staff    204 Jan 30 16:20 [36msrc[m[m
--rw-r--r--   1 Elvis  staff    758 Jan 30 16:00 test
-drwxr-xr-x   4 Elvis  staff    136 Jan 30 16:01 [36mtests[m[m
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
-error in execvp: File name too long
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls sdadafafdsgdbfaretsrhgfsdasghdfdsfagshfdtaresrhdgfnd f ad sdgsfsdgsgsd fgsb ffgfdhbdgsags
-ls: ad: No such file or directory
-ls: f: No such file or directory
-ls: ffgfdhbdgsags: No such file or directory
-ls: fgsb: No such file or directory
-ls: sdadafafdsgdbfaretsrhgfsdasghdfdsfagshfdtaresrhdgfnd: No such file or directory
-ls: sdgsfsdgsgsd: No such file or directory
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ 	
-error in execvp: No such file or directory
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls #sdfasd
-LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ;
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ;;&&||
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls && ls
-LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
-LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls;ls
-LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
-LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ false && ls
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ ls || ls
-LICENSE   Makefile  README.md [36mbin[m[m       [36mobj[m[m       [36msrc[m[m       test      [36mtests[m[m
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ pwd
-/Users/Elvis/Documents/UCR /CS 100/rshell
-[rshell]Elvis@ucrwpa1-2-132-174.bulk.ucr.edu:~/Documents/UCR /CS 100/rshell$ exit
-[01;32mElvis@ucrwpa1-2-132-174[00m:[01;36m~/Documents/UCR /CS 100/rshell[00m$ exit
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #this is a comment
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test one command:
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ls
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test command with spaces in front and/or back
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$      ls      -a -l 
+total 56
+drwx------  7 yliu127 csmajs  4096 Mar  9 17:35 .
+drwx------ 12 yliu127 csmajs  4096 Mar  9 17:18 ..
+drwx------  8 yliu127 csmajs  4096 Mar  8 14:44 .git
+-rw-------  1 yliu127 csmajs     8 Mar  8 14:44 .gitignore
+-rw-------  1 yliu127 csmajs 18027 Mar  8 14:44 LICENSE
+-rw-------  1 yliu127 csmajs   485 Mar  8 14:44 Makefile
+-rw-------  1 yliu127 csmajs   237 Mar  8 14:44 README.md
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 bin
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 obj
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 src
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 tests
+-rw-------  1 yliu127 csmajs     0 Mar  9 17:35 typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$       ls    
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test command with two parameters
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ls -a -l
+total 56
+drwx------  7 yliu127 csmajs  4096 Mar  9 16:58 .
+drwx------ 12 yliu127 csmajs  4096 Mar  9 15:14 ..
+drwx------  8 yliu127 csmajs  4096 Mar  8 14:44 .git
+-rw-------  1 yliu127 csmajs     8 Mar  8 14:44 .gitignore
+-rw-------  1 yliu127 csmajs 18027 Mar  8 14:44 LICENSE
+-rw-------  1 yliu127 csmajs   485 Mar  8 14:44 Makefile
+-rw-------  1 yliu127 csmajs   237 Mar  8 14:44 README.md
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 bin
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 obj
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 src
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 tests
+-rw-------  1 yliu127 csmajs     0 Mar  9 16:58 typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ls -al
+total 56
+drwx------  7 yliu127 csmajs  4096 Mar  9 16:58 .
+drwx------ 12 yliu127 csmajs  4096 Mar  9 15:14 ..
+drwx------  8 yliu127 csmajs  4096 Mar  8 14:44 .git
+-rw-------  1 yliu127 csmajs     8 Mar  8 14:44 .gitignore
+-rw-------  1 yliu127 csmajs 18027 Mar  8 14:44 LICENSE
+-rw-------  1 yliu127 csmajs   485 Mar  8 14:44 Makefile
+-rw-------  1 yliu127 csmajs   237 Mar  8 14:44 README.md
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 bin
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 obj
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 src
+drwx------  2 yliu127 csmajs  4096 Mar  8 14:44 tests
+-rw-------  1 yliu127 csmajs     0 Mar  9 16:58 typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test command with three parameters
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ls -a -l -h
+total 56K
+drwx------  7 yliu127 csmajs 4.0K Mar  9 16:58 .
+drwx------ 12 yliu127 csmajs 4.0K Mar  9 15:14 ..
+drwx------  8 yliu127 csmajs 4.0K Mar  8 14:44 .git
+-rw-------  1 yliu127 csmajs    8 Mar  8 14:44 .gitignore
+-rw-------  1 yliu127 csmajs  18K Mar  8 14:44 LICENSE
+-rw-------  1 yliu127 csmajs  485 Mar  8 14:44 Makefile
+-rw-------  1 yliu127 csmajs  237 Mar  8 14:44 README.md
+drwx------  2 yliu127 csmajs 4.0K Mar  8 14:44 bin
+drwx------  2 yliu127 csmajs 4.0K Mar  8 14:44 obj
+drwx------  2 yliu127 csmajs 4.0K Mar  8 14:44 src
+drwx------  2 yliu127 csmajs 4.0K Mar  8 14:44 tests
+-rw-------  1 yliu127 csmajs    0 Mar  9 16:58 typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test command with wrong parameter 
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ls -poi
+total 44
+ 4013729 -rw------- 1 yliu127 18027 Mar  8 14:44 LICENSE
+ 6235719 -rw------- 1 yliu127   485 Mar  8 14:44 Makefile
+ 6235720 -rw------- 1 yliu127   237 Mar  8 14:44 README.md
+ 5372403 drwx------ 2 yliu127  4096 Mar  8 14:44 bin/
+ 5372389 drwx------ 2 yliu127  4096 Mar  8 14:44 obj/
+ 6235721 drwx------ 2 yliu127  4096 Mar  8 14:44 src/
+ 6235730 drwx------ 2 yliu127  4096 Mar  8 14:44 tests/
+24481406 -rw------- 1 yliu127     0 Mar  9 16:58 typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ls -23456
+ls: invalid option -- '2'
+Try `ls --help' for more information.
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test command with many wrong parameters
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ls dad asd  sdfd sadf asd fds fasd f
+ls: cannot access dad: No such file or directory
+ls: cannot access asd: No such file or directory
+ls: cannot access sdfd: No such file or directory
+ls: cannot access sadf: No such file or directory
+ls: cannot access asd: No such file or directory
+ls: cannot access fds: No such file or directory
+ls: cannot access fasd: No such file or directory
+ls: cannot access f: No such file or directory
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test wrong command
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ lss
+error in execv: No such file or directory
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test command that is too long
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd
+error in execv: File name too long
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test &&
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true && echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false && echo false
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ echo true && echo true
+true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true && false && echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true && true && echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #no space &&
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true&&echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false&&echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test ||
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true || echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false || echo false
+false
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ echo true || echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ echo false || echo true
+false
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true || true || echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false || false || echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #no space ||  
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true||echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false||echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test ;
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ echo a;echo b;echo c
+a
+b
+c
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ls;ls ; ls ;; ls
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ;ls ls ;ls
+ls: cannot access ls: No such file or directory
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ;;
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ; ;
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ls     ;ls ;
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ;ls
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ ; ls
+LICENSE  Makefile  README.md  bin  obj	src  tests  typescript
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test && with ||
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true && false || echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true && true || echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false && true || echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false && false || echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true || true && echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true || false && echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false || true && echo true
+true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false || false && echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #no space with both && and ||
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ true&&true||echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false&&true||echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false||true&&echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ false||false&&echo true
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test input a space
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$    
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test exit
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #whatever exit
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ exit -a -l      
+error in execv: No such file or directory
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ exitexitexitexit
+error in execv: No such file or directory
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #exit
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ #test exit with spaces
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$      exit
+error in execv: No such file or directory
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ exit    
+error in execv: No such file or directory   
+[rshell]yliu127@hammer.cs.ucr.edu:~/rshell$ exit
+%%%%%%%%%%yliu127@cs100:~/rshell ((hw3)) $ exit
+exit
+~
+yliu127@hammer $ exit
 exit
 
-Script done on Mon Feb  2 15:44:32 2015
+Script done on Mon Mar  9 17:13:09 2015
